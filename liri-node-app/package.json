@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativelaurels/LIRI-node-bot.git"
+    "url": "git+https://github.com/ezharandall/liri-node-app.git"
   },
   "author": "Ezha Randall",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/creativelaurels/LIRI-node-bot/issues"
+    "url": "https://github.com/ezharandall/liri-node-app.git/issues"
   },
-  "homepage": "https://github.com/creativelaurels/LIRI-node-bot#readme"
+  "homepage": "https://github.com/ezharandall/liri-node-app.git#readme"
 }
