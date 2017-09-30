@@ -6,4 +6,4 @@ Technology Used: node.js, javascript
 
 API's: Twitter, Spotify, OMDB
 
-Week 10 <3
+Week 10 
