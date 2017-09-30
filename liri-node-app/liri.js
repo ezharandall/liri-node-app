@@ -4,7 +4,7 @@ var action = process.argv[2];
 // either the name of a song, or movie
 var value = process.argv[3];
 
-// switch case for whatever command the user enters
+// switch case for the command the user enters
 switch(action){
     case 'my-tweets':
         twitter();
@@ -40,7 +40,7 @@ function twitter(){
 		access_token_secret: twitterKeys.access_token_secret
   });
   // what to search for
-  var params = {screen_name: 'creativelaurels'};
+  var params = {screen_name: 'origionalsheba'};
   //console.log(params);
 
   // using the npm
@@ -51,7 +51,7 @@ function twitter(){
     }
     else {
       // for loop to run through the length of my account's tweets
-      console.log("\n/////////////////TWEET ME////////////////\n");
+      console.log("\n**********************TWEET ME***********************\n");
       for(i=0; i< tweets.length; i++){
         // adds a number and dot before to show order
         console.log((i+1) + ". " + tweets[i].text);
@@ -64,7 +64,14 @@ function twitter(){
 //SPOTIFY FUNCTION
 function spotify() {
   //npm package
-  var spotify = require('spotify');
+  
+  var spotifyKeys = require('./keys.js').spotifyKeys;
+
+  var Spotify = require('spotify');
+
+  var client = new Spotify ({
+    id: spotifyKeys.id,
+    secret: spotifyKeys.secret,
 
   spotify.search({type: 'track', query: value || 'ace of base the sign'}, function(err, data) {
     if (err) {
@@ -80,7 +87,7 @@ function spotify() {
     //console.log("/////////spotifyCall.artists[0].name////////");
 
 // if no error, show me the information from the API
-    console.log("\n/////////////////SPOTIFY THIS////////////////\n");
+    console.log("\n********************SPOTIFY THIS**********************\n");
     var artist = spotifyCall.artists[0].name;
     console.log("Artist: " + artist);
     var song = spotifyCall.name;
@@ -111,7 +118,7 @@ var urlDefault = 'http://www.omdbapi.com/?t=' + movieDefault + '&y=&plot=short&r
       // If the request is successful
       if (!error && response.statusCode == 200) {
               // Parse the body and pull for each attribute
-              console.log("\n/////////////////MOVIE THIS////////////////\n")
+              console.log("\n/******************MOVIE THIS********************\n")
               console.log("Title: " + value);
               console.log("Year: " + JSON.parse(body)["Year"]);
               console.log("Rating: " + JSON.parse(body)["imdbRating"]);
